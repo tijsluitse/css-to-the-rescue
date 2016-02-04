@@ -129,8 +129,8 @@ body > header nav {
 }
 
 body > header nav svg {
-	width: 20px;
-	height: 20px;
+	width: 1.5em;
+	height: 1.5em;
 }
 
 body > header nav ul li,
