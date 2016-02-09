@@ -307,12 +307,20 @@ article#profile-picture {
 	border-radius: 100%;
 }
 
+#profile-picture figure.current-profile-picture > img:hover {
+	cursor: pointer;
+}
+
 .filter-effects {
 	margin-top: 2em;
 }
 
 .filter-effects header {
 	background-color: transparent;
+}
+
+.filter-effects img:hover {
+	cursor: pointer;
 }
 
 /***********/
