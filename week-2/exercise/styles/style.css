@@ -91,7 +91,6 @@ header[role="navigation"] a {
 header[role="navigation"] {
 	width: 20%;
 	display: -webkit-flex;
-	background-color: rgba(50,60,75,1);
 	box-shadow: 0px -2px 10px rgba(50,60,75,1);
 	text-align: center;
 	padding-top: 2em;
@@ -100,6 +99,11 @@ header[role="navigation"] {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
+	background: #3CBEB1;
+    background-image: linear-gradient(90deg, #326F69 11px, transparent 0), 
+    linear-gradient(90deg, #309288 23px, transparent 0), 
+    linear-gradient(90deg, #126960 23px, transparent 0);
+    background-size: 83px 100%, 61px 100%, 41px 100%;
 }
 
 header[role="navigation"] h1 {
@@ -228,11 +232,21 @@ button[role="button"] {
     font-weight: 500;
     letter-spacing: .5px;
     text-transform: uppercase;
+    position: relative;
     transition: all .5s ease-in;
     -webkit-transition: all .5s ease-in;
     -moz-transition: all .5s ease-in;
     -ms-transition: all .5s ease-in;
     -o-transition: all .5s ease-in;
+}
+
+button[role="button"]:before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	bottom: -10px;
+	left: -10px;
 }
 
 a[role="button"]:hover, 
@@ -242,12 +256,30 @@ button[role="button"]:hover {
 	color: white;
 }
 
+a:focus {
+	outline: none;
+	text-decoration: underline;
+}
+
 input:focus {
 	outline: none;
 }
 
-input {
+input:focus + span {
 	color: rgba(60,190,178,1);
+	text-decoration: underline;
+}
+
+button:focus {
+	outline: none;
+	background-color: rgba(60,190,178,1);
+	color: white;
+}
+
+input {
+	padding: .2em .5em; 
+	color: rgba(60,190,178,1);
+	border:	1px solid rgba(0, 0, 0, 0.18);
 }
 
 /********************/
@@ -473,7 +505,7 @@ footer[role="contactInfo"] > address {
 	    overflow: scroll;
 	}
 
-	nav ul li {
+	nav ul li a {
 		padding: 2em;
 	}
 
@@ -499,15 +531,6 @@ footer[role="contactInfo"] > address {
 
 	#profile-picture figure > img {
 		max-width: 100%;
-	}
-
-	#photo-albums figure {
-		width: 100%;
-		padding-bottom: 2em;
-	}
-
-	#photo-albums figure:last-of-type {
-		padding-bottom: 0;
 	}
 	
 	footer[role="contactInfo"] {
@@ -541,6 +564,142 @@ footer[role="contactInfo"] > address {
 	}
 
 }
+
+/* loader */
+
+@keyframes loader {
+	to { 
+		background-position: -800px 0; 
+	}
+}
+
+.loader {
+	width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    position: fixed;
+    z-index: 100000;
+    background: url(http://dabblet.com/img/loader.png) 0 0;
+    animation: loader 1s infinite steps(8);
+    opacity: 0;
+}
+
+#find-friends:target .loader {
+	animation: showLoader 2s ease;
+}
+
+@keyframes showLoader {
+	0% {opacity: 0;}
+	50% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+#photo-albums {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: space-between;
+}
+
+#photo-albums header {
+	width: 100%;
+}
+
+#photo-albums figure {
+	width: 48%;
+}
+
+#find-friends {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#find-friends header {
+	width: 100%;
+}
+
+#find-friends figure {
+	width 20%;
+}
+
+figure {
+	padding-bottom: 1em;
+}
+
+img {
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	transition: all 1s ease;
+}
+
+img:hover {
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+   	cursor: url(../images/magnify.png), auto;
+}
+
+figure img {
+	position: relative;
+	z-index: 100;
+}
+
+figure figcaption {
+	top: -50px;
+	position: relative;
+	transition: all 1s ease;
+}
+
+img:hover + figcaption {
+	top: 0px;
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	margin-top: .5em;
+	clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"] + label::before {
+	content: '\a0';
+	display: inline-block;
+	vertical-align: .2em;
+	width: 1.2em;
+	height: 1.2em;
+	margin-right: 1em;
+	border-radius: 0px;
+	background: transparent;
+	text-indent: .15em;
+	line-height: 1.2em;
+	border: 2px solid rgba(60,190,178,1);
+}
+
+input[type="checkbox"]:checked + label::before {
+	content: '\2713';
+	color: rgba(60,190,178,1);
+	background: transparent;
+}
+
+input[type="checkbox"]:focus + label::before {
+	outline: none;
+	background-color: rgba(60,190,178,1);
+	color: white;
+}
+
+input[type="checkbox"]:disabled + label::before {
+	background: transparent;
+	border: 1px solid rgba(60,190,178,1);
+	box-shadow: none;
+	color: #555;
+	cursor: not-allowed;
+}
+
 
 
 
