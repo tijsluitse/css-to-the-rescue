@@ -181,7 +181,7 @@ main[role="content"] header {
 	background-color: white;
     position: relative;
     left: -4em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     z-index: 1;
 }
 
@@ -198,6 +198,10 @@ main[role="content"] > article:last-of-type {
 /********/
 /* FORM */
 /********/
+
+form[role="form"] {
+	max-width: max-content;
+}
 
 form[role="form"] h3 {
 	font-weight: 200;
@@ -420,11 +424,11 @@ img:hover + figcaption {
 
 .effect-01 img {
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncA type="table" tableValues="0 0.5" /></feComponentTransfer></filter></svg>#filter');
-	filter: opacity(50%);
-	-webkit-filter: opacity(50%);
-	-moz-filter: opacity(50%);
-	-o-filter: opacity(50%);
-	-ms-filter: opacity(50%);
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	-ms-filter: grayscale(1);
 }
 
 .effect-02 img {
@@ -463,6 +467,14 @@ img:hover + figcaption {
 	-ms-filter: invert(1);
 }
 
+/************/
+/* PASSWORD */
+/************/
+
+#password {
+	max-width: max-content;
+}
+
 /***************/
 /* PHOTO ALBUM */
 /***************/
@@ -473,6 +485,7 @@ img:hover + figcaption {
 	flex-wrap: wrap;
 	align-content: flex-start;
 	justify-content: space-between;
+	max-width: max-content;
 }
 
 #photo-albums header {
@@ -485,7 +498,6 @@ img:hover + figcaption {
 
 #photo-albums figure img {
 	width: 100%;
-	max-width: max-content;
 }
 
 /****************/
@@ -510,7 +522,6 @@ img:hover + figcaption {
 
 #find-friends figure img {
 	width: 100%;
-	max-width: max-content;
 }
 
 /**********/
@@ -565,16 +576,12 @@ footer[role="contactInfo"] > address {
 
 .loader {
 	width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    position: fixed;
-    z-index: 100000;
+	height: 100px;
+	margin: auto;
+	margin-bottom: 2em;
     background: url(http://dabblet.com/img/loader.png) 0 0;
     animation: loader 1s infinite steps(8);
-    opacity: 0;
+    opacity: 1;
 }
 
 @keyframes loader {
@@ -680,7 +687,7 @@ input[type="checkbox"]:disabled + label::before {
 	}
 
 	#profile-picture figure > img {
-		max-width: 100%;
+		width: 100%;
 	}
 	
 	footer[role="contactInfo"] {
@@ -726,8 +733,12 @@ input[type="checkbox"]:disabled + label::before {
 		width: 100%;
 	}
 
-	form label span {
+	form[role="form"] label span {
 		width: 100%;
+	}
+
+	figure figcaption {
+		top: 0;
 	}
 }
 
