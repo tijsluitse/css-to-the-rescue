@@ -8,6 +8,22 @@
 	box-sizing: border-box;
 }
 
+/********/
+/* BODY */
+/********/
+
+body {
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: .8em;
+	color: rgb(193, 193, 193);
+    letter-spacing: .01em;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
 /***********/
 /** FONTS **/
 /***********/
@@ -29,18 +45,6 @@ h1 {
 /************/
 /* ELEMENTS */
 /************/
-
-body {
-	display: -webkit-flex;
-	-webkit-flex-direction: row;
-	-webkit-flex-wrap: wrap;
-	display: flex;
-	flex-wrap: wrap;
-	font-size: .8em;
-	color: rgb(193, 193, 193);
-    letter-spacing: .01em;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
 
 ul {
 	list-style: none;
@@ -81,7 +85,7 @@ main span {
 header[role="navigation"] {
 	width: 20%;
 	display: -webkit-flex;
-	box-shadow: 0px -.2em 1em rgba(50,60,75,1);
+	box-shadow: 0 -.2em 1em rgba(50,60,75,1);
 	text-align: center;
 	padding-top: 2em;
 	-webkit-flex-direction: column;
@@ -116,7 +120,7 @@ header[role="navigation"] p,
 header[role="navigation"] em {
 	font-size: 1.3em;
 	font-weight: 700;
-	padding: 1em 0px 2em 0px;
+	padding: 1em 0 2em 0;
 	color: white;
 }
 
@@ -164,7 +168,7 @@ main[role="content"] {
 	-webkit-flex-direction: column;
 	-webkit-justify-content: -webkit-flex-end;
 	justify-content: -webkit-flex-end;
-	padding: 0px 0px 0px 0.5%;
+	padding: 0 0 0 0.5%;
 }
 
 main[role="content"] h1,
@@ -353,7 +357,7 @@ button[role="button"]:focus {
 svg {
 	fill: rgba(60,190,178,1);
 	fill: rgba(60,190,178,1);
-    margin-right: 10px;
+    margin-right: 1em;
     position: relative;
     top: 5px;
     transition: all .5s ease-in;
@@ -380,7 +384,7 @@ figure figcaption {
 }
 
 img:hover + figcaption {
-	top: 0px;
+	top: 0;
 }
 
 #photo-albums img,
@@ -515,7 +519,7 @@ img:hover + figcaption {
 
 footer[role="contactInfo"] {
 	background-color: rgba(56, 61, 68, 1);
-    box-shadow: 0px .2em 1em rgba(50,60,75,1);
+    box-shadow: 0 .2em 1em rgba(50,60,75,1);
     border-top: .1em solid rgba(255, 255, 255, 0.1);
 	width: 100%;
 	display: -webkit-flex;
@@ -596,7 +600,7 @@ input[type="checkbox"] + label::before {
 	width: 1.2em;
 	height: 1.2em;
 	margin-right: 1em;
-	border-radius: 0px;
+	border-radius: 0;
 	background: transparent;
 	text-indent: .15em;
 	line-height: 1.2em;
