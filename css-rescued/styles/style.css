@@ -525,6 +525,52 @@ img:hover + figcaption {
 }
 
 /**********/
+/* FOOTER */
+/**********/
+
+footer[role="contactInfo"] {
+	background-color: rgba(56, 61, 68, 1);
+    box-shadow: 0 .2em 1em rgba(50,60,75,1);
+    border-top: .1em solid rgba(255, 255, 255, 0.1);
+	width: 100%;
+	display: -webkit-flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	padding: 2em 0 2em 0;
+}
+
+footer[role="contactInfo"] a:hover {
+	color: white;
+}
+
+footer[role="contactInfo"] > nav, 
+footer[role="contactInfo"] > ul, 
+footer[role="contactInfo"] > address {
+	width: 33.33%;
+	text-align: center;
+}
+
+footer[role="contactInfo"] li {
+	border: none !important;
+	height: 2em;
+}
+
+footer[role="contactInfo"] > ul:first-of-type {
+	border-right: .1em solid rgba(255,255,255,0.1);
+}
+
+footer[role="contactInfo"] > address {
+	-webkit-box-ordinal-group: 0;
+	-webkit-order: -1;
+	-ms-flex-order: -1;
+	order: -1;
+	border-right: .1em solid rgba(255, 255, 255, 0.1);
+}
+
+/**********/
 /* LOADER */
 /**********/
 
@@ -590,52 +636,6 @@ input[type="checkbox"]:disabled + label::before {
 
 .checkFilter {
 	margin-top: 1em;
-}
-
-/**********/
-/* FOOTER */
-/**********/
-
-footer[role="contactInfo"] {
-	background-color: rgba(56, 61, 68, 1);
-    box-shadow: 0 .2em 1em rgba(50,60,75,1);
-    border-top: .1em solid rgba(255, 255, 255, 0.1);
-	width: 100%;
-	display: -webkit-flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	padding: 2em 0 2em 0;
-}
-
-footer[role="contactInfo"] a:hover {
-	color: white;
-}
-
-footer[role="contactInfo"] > nav, 
-footer[role="contactInfo"] > ul, 
-footer[role="contactInfo"] > address {
-	width: 33.33%;
-	text-align: center;
-}
-
-footer[role="contactInfo"] li {
-	border: none !important;
-	height: 2em;
-}
-
-footer[role="contactInfo"] > ul:first-of-type {
-	border-right: .1em solid rgba(255,255,255,0.1);
-}
-
-footer[role="contactInfo"] > address {
-	-webkit-box-ordinal-group: 0;
-	-webkit-order: -1;
-	-ms-flex-order: -1;
-	order: -1;
-	border-right: .1em solid rgba(255, 255, 255, 0.1);
 }
 
 /***********/
